@@ -6,28 +6,51 @@
     <p id="demo"></p>
 
     <script>
-        var fullName = "Nguyen Nhat Linh";
-        var studentId = "26A4041702";
+        let fullName = "Nguyen Nhat Linh";
+        let studentId = "26A4041702";
 
         // tách tên
-        var arr = fullName.split(" ");
-        var firstName = arr[arr.length - 1];
-        var middleName = arr[1];
-        var lastName = arr[0];
+        let arr = fullName.split(" ");
+        let firstName = arr[arr.length - 1];
+        let middleName = arr[1];
+        let lastName = arr[0];
 
         // tạo email
-        var email = firstName + middleName[0] + lastName[0] + "." + studentId.toLowerCase() + "@hvnh.edu.vn";
+        let email = firstName + middleName[0] + lastName[0] + "." + studentId.toLowerCase() + "@hvnh.edu.vn";
 
         // khóa 
-        var coursePeriod = "K" + studentId.substring(0, 2);
+        let coursePeriod = "K" + studentId.substring(0, 2);
 
         // khoa 
-        var faculty = studentId.substring(3, 6);
-
+        let facultyCode = studentId.substring(3, 6);
+        let facultyCode = "";
+        if (facultyCode == "404") {
+            faculty = "CNTT&KTS";
+        } else if (facultyCode == "408") {
+            faculty = "KHDL";
+        } else if (facultyCode == "401") {
+            faculty = "Ngan hang";
+        } else if (facultyCode == '403') {
+            faculty = "QTKD";
+        } else if (facultyCode == '401') {
+            faculty = "TC";
+        } else if (facultyCode == '405') {
+            faculty = "KDQT";
+        } else if (facultyCode == '407') {
+            faculty = "KT";
+        } else if (facultyCode == '406') {
+            faculty = "Luat";
+        } else if (facultyCode == '751') {
+            faculty = "Ngon ngu";
+        } else if (facultyCode == '402') {
+            faculty = "KT - KT";
+        } else {
+            faculty = "Khong xac dinh";
+        }
         // tổng 4 số cuối MSV
-        var last4 = studentId.substring(studentId.length - 4);
-        var sum = 0;
-        for (var i = 0; i < last4.length; i++) {
+        let last4 = studentId.substring(studentId.length - 4);
+        let sum = 0;
+        for (let i = 0; i < last4.length; i++) {
             sum = sum + parseInt(last4[i]);
         }
 
@@ -35,7 +58,7 @@
             "Email: " + email + "<br>" +
             "Xin chao " + fullName +
             ", ban la sinh vien khoa " + coursePeriod +
-            ", khoa " + faculty +
+            ", khoa " + facultyCode +
             ", tong 4 so cuoi trong ma sinh vien la " + sum;
 
     </script>
