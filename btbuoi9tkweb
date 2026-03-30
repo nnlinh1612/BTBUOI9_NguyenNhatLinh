@@ -18,7 +18,7 @@
         // tạo email
         var email = firstName + middleName[0] + lastName[0] + "." + studentId.toLowerCase() + "@hvnh.edu.vn";
 
-        // khóa học 
+        // khóa 
         var coursePeriod = "K" + studentId.substring(0, 2);
 
         // khoa 
